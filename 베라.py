@@ -1,3 +1,4 @@
+
 print('컵 크기: 파인트(3가지맛) 9800원, 쿼터(4가지맛) 18500원, 패밀리(5가지맛), 하프갤런(6가지맛)')
 
 size = input('컵 크기를 입력해주세요: ')
@@ -37,10 +38,10 @@ cups = int(input('몇 개를 드릴까요: '))
 
 total_price = cups * price
 
-received_cash = int(input(f'가격은 {total_price}원 입니다. 얼마를 주실건가요'))
+recieved_money = int(input(f'가격은 {total_price}원 입니다. 얼마를 주실건가요'))
 
-if received_cash >= total_price:
-    change = received_cash - total_price
+if recieved_money >= total_price:
+    change = recieved_money - total_price
     print(f'거스름돈은 {change}원 입니다')
 else: print('가격이 부족합니다.')
 
