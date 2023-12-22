@@ -5,14 +5,16 @@ size = input('컵 크기를 입력해주세요: ')
 
 taste_number = 3
 
+
+
 def lim_taste():
     global taste_kind
-    if len(taste_kind) > taste_number:
+    if taste_kind.count(',') > taste_number:
         taste_kind = input(f'이 사이즈는 {taste_number}맛 까지만 선택이 가능하세요 다시 선택해주세요')
     else: print('{}을 선택하신거 맞으세요?'.format(taste_kind))
 
-taste_kind = ['민트초코','엄마는 외계인','슈팅스타','누욕 치즈케이크','바닐라','베리베리스트로베리','오레오 쿠키앤크림']
-taste_kind = input(f'민트초코,엄마는 외계인,슈팅스타,뉴욕 치즈케이크,바닐라 (중 {taste_number}개를 택하세요) ')
+taste_kind = ['민트초코','엄마는 외계인','슈팅스타','뉴욕 치즈케이크','바닐라','베리베리스트로베리','오레오 쿠키앤크림']
+taste_kind = input(f'민트초코,엄마는 외계인,슈팅스타,뉴욕 치즈케이크,바닐라,베리베리스트로베리,오레오 쿠키앤크림(중 {taste_number}개를 택하세요) ')
 
 if size == '파인트':
     price = 9800
@@ -44,7 +46,6 @@ if recieved_money >= total_price:
     change = recieved_money - total_price
     print(f'거스름돈은 {change}원 입니다')
 else: print('가격이 부족합니다.')
-
 
 
 
