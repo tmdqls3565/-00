@@ -1,6 +1,8 @@
 
 menu_type = input('컵으로 하실건가요 콘으로 하실건가요?:')
 
+
+#메뉴가 컵일때
 if menu_type == '컵':
 
     print('컵 크기: 파인트(3가지맛) 9800원, 쿼터(4가지맛) 18500원, 패밀리(5가지맛), 하프갤런(6가지맛)')
@@ -39,7 +41,7 @@ if menu_type == '컵':
         taste_number += 3
         lim_taste()
 
-
+#메뉴가 콘일때
 elif menu_type == '콘':
     price = 3500
     taste_kind = input('민트초코,엄마는 외계인,슈팅스타,뉴욕 치즈케이크,바닐라,베리스트로베리,오레오 쿠키앤크림 (중 1개를 택해주세요)')
@@ -49,20 +51,23 @@ elif menu_type == '콘':
         taste_kind = input('이 맛은 1가지 까지만 선택이 가능합니다. 다시 선택해주세요.:')
     else: print(f'{taste_kind}를 선택하셨습니다.')
     
-cups = int(input('몇 개를 드릴까요?:'))
-
+cups = int(input('수량을 입력해주세요.(숫자로만):')) 
 
 total_price = cups * price
 
-recieved_money = int(input(f'가격은 {total_price}원 입니다. 얼마를 주실건가요?:'))
+payment_method = input('카드로 하실건가요 현금으로 하실건가요.:')
 
-if recieved_money >= total_price:
-    change = recieved_money - total_price
-    print(f'거스름돈은 {change}원 입니다')
-else: print('가격이 부족합니다.')
+if payment_method == '현금':
+    recieved_money = int(input(f'가격은 {total_price}원 입니다. 현금을 투입해주세요.:'))
+    while recieved_money < total_price:
+        recieved_money = int(input('금액이 부족합니다. 금액을 추가로 투입해주세요:'))
+        
+    else: 
+        change = recieved_money - total_price
+        print(f'거스름돈은 {change}원 입니다')
 
+elif payment_method == '카드':
+    print('카드를 꽂아주세요.')
+    recieved_money = total_price
 
-
-
-
-
+print('결제가 완료되었습니다.')
